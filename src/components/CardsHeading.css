@@ -1,0 +1,8 @@
+.next-trip-heading {
+  color: var(--main-0);
+  font-size: 41px;
+  text-align: center;
+  margin-top: 22px;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
