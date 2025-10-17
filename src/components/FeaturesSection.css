@@ -1,5 +1,5 @@
 .features {
-  background: whitesmoke;
+  background: var(--header-bg);
 }
 
 .feature-head{

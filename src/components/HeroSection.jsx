@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./HeroSection.css";
-// import bgImage from '../assets/images/hero-bg.png';
+import bgImageAlt from '../assets/images/indiaGate.jpg';
 function HeroSection() {
 
   const [images, setImages] = useState([]);
@@ -58,8 +58,7 @@ function HeroSection() {
     return () => { clearInterval(interval) }
   }, [images])
 
-  const bgImage = images[currIndex] || "";
-
+  const bgImage = images[currIndex] || bgImageAlt;
   return (
       <section
         className="hero-section"
