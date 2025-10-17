@@ -5,6 +5,7 @@ import { Cards } from './components/Cards';
 import { CardsHeading } from './components/CardsHeading';
 import Footer from './components/Footer';
 import StatsSection from './components/StatsSection';
+import FeedSection from './components/FeedSection';
 import techYatriesFavicon from '../src/assets/images/logo.png';
 import './App.css';
 
@@ -20,6 +21,7 @@ function App() {
       <CardsHeading />
       <Cards/>
       <FeaturesSection />
+      <FeedSection />
       <StatsSection />
       <Footer />
     </>
