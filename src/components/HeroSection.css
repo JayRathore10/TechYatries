@@ -1,6 +1,6 @@
 .hero-section {
   position: relative;
-  height: 90vh;
+  height: 99vh;
   color: white;
   text-align: center;
   background-size: cover;
@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-image 1s ease-in-out; /* same for all images */
 }
 
 .overlay {
