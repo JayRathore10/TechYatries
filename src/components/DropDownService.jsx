@@ -6,7 +6,9 @@ export function DropDownService() {
         <ul class="dropdown-menu">
           <li><a href="#">Book Travel Guide</a></li>
           <li><a href="#">Book Hotel</a></li>
-          <li><a href="#">Book Ticket</a></li>
+          <li><a href="#"
+            className='last-a'
+          >Book Ticket</a></li>
         </ul>
     </>
   );

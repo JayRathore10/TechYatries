@@ -21,14 +21,15 @@
 
 .dropdown-menu a {
   display: block;
-  padding: 10px 15px;
+  padding: 7px 15px;
   color: var(--main-0);
   text-decoration: none;
 }
 
+
 .dropdown-menu a:hover {
-  color: var(--main-0-white);
-  background-color: var(--main-1);
+  color: white;
+  background-color: var(--main-);
 }
 
 @media (max-width: 768px) {
