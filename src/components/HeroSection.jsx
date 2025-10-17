@@ -45,7 +45,7 @@ function HeroSection() {
       }
     }
     fetchImages();
-  });
+  } , []);
 
   useEffect(() => {
     if (images.length === 0) return;

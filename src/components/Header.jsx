@@ -1,14 +1,22 @@
 import { useState } from 'react';
 import logoPic from '../assets/images/logo.png';
-import './Header.css';
 import { DropDownService } from './DropDownService';
+import {easeInOut, motion} from 'framer-motion';
+import './Header.css';
 
 export function Header() {
   const [dropDown, setDropDown] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false); // for mobile hamburger
 
+  // just to avoid eslint error 
+  motion.create(Header);
+
   return (
-    <header className="main-header">
+    <motion.header className="main-header"
+      initial={{opacity :0 , y : -100}}
+      animate ={{opacity :1  ,y : 0}}
+      transition={{duration : 0.7 , ease:easeInOut}}
+    >
       <div className="logo-sec">
         <img src={logoPic} className="logo-pic" alt="Logo" />
         <span className="logo">TechYatries</span>
@@ -39,17 +47,29 @@ export function Header() {
 
       <div className="right-section">
         <div className="search-box">
-          <input type="text" placeholder="Search..." />
-          <button>
+          <motion.input type="text" placeholder="Search..."
+            initial={{scale:0.2 , opacity:0.2}}
+            animate={{scale:1 , opacity:1}}
+            transition={{duration:1.5 }}
+          />
+          <motion.button
+            initial={{scale:0.2 , opacity:0.2}}
+            animate={{scale:1, opacity:1}}
+            transition={{duration :1.5}}
+          >
             <i className="search-icon hgi hgi-stroke hgi-search-01"></i>
-          </button>
+          </motion.button>
         </div>
 
-        <div className="auth-buttons">
-          <button className="signin-btn">Sign In</button>
-          <button className="signup-btn">Sign Up</button>
-        </div>
+        <motion.div className="auth-buttons"
+          initial={{x:100 , opacity:0}}
+          animate={{x :1 , opacity:1}}
+          transition={{duration:1.5 , ease:easeInOut}}
+        >
+          <button className="signin-btn">Location</button>
+          <button className="signup-btn">Sign In</button>
+        </motion.div>
       </div>
-    </header>
+    </motion.header>
   );
 }
