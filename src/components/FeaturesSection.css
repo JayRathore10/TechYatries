@@ -1,16 +1,20 @@
+/* Section background */
 .features {
   background: var(--header-bg);
+  padding: 60px 20px; /* space around the section */
 }
 
-.feature-head{
+/* Section heading */
+.feature-head {
   color: var(--main-0);
   font-size: 41px;
   text-align: center;
-  margin-top: 22px;
-  margin-bottom: 25px;
+  margin-top: 0;
+  margin-bottom: 50px;
   font-weight: 700;
 }
 
+/* Grid layout for cards */
 .feature-grid {
   display: flex;
   justify-content: center;
@@ -18,23 +22,45 @@
   flex-wrap: wrap;
 }
 
+/* Individual card styling */
 .feature-card {
   background: white;
   border-radius: 10px;
-  padding: 20px;
+  padding: 30px 20px;
   width: 290px;
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 10);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center icon, title, description */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feature-card:hover{
+.feature-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 18px rgba(249, 82, 5, 0.884);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
+/* Icon inside card */
 .feature-icon {
   font-size: 60px;
   color: var(--main-3);
   margin-bottom: 15px;
+}
+
+/* Card title */
+.feature-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--main-0);
+}
+
+/* Card description */
+.feature-desc {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
 }
