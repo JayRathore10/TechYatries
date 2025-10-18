@@ -5,8 +5,14 @@
   --main-0-white: white;
   --main-1: #ffa64d;
   --main-2: #e65c00;
-  --main-3:#ff7a00;
+  --main-3: #ff7a00;
+  --primary-color: #ff7a00;
+  --secondary-color: #ffae42;
+  --background-color: #fffaf6;
+  --text-color: #333;
+  --white: #ffffff;
 }
+
 
 * {
   margin: 0;

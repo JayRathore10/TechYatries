@@ -76,6 +76,7 @@
 }
 
 .explore-btn:hover {
+  padding: 13px 30px;
   background-color: #f3f3f3;
 }
 

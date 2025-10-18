@@ -1,12 +1,20 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./FeaturesSection.css";
 
 export function FeaturesSection() {
+  // to bypass the eslint error 
+  motion.create(FeaturesSection);
   return (
     <section className="features">
-      <h2 className="feature-head">
+      <motion.h2 className="feature-head"
+        initial={{opacity:0 , x : -100}}
+        whileInView={{opacity:1 , x : 0}}
+        viewport={{once: true , amount:0.5}}
+        transition={{duration:1}}
+      >
         Everthing You Needed to Explore the world
-      </h2>
+      </motion.h2>
       <br />
       <div className="feature-grid">
         <div className="feature-card">
