@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { motion } from 'framer-motion';
 import "./HeroSection.css";
-import bgImageAlt from '../assets/images/indiaGate.jpg';
+// import bgImageAlt from '../assets/images/indiaGate.jpg';
 function HeroSection() {
 
   const [images, setImages] = useState([]);
@@ -14,7 +15,6 @@ function HeroSection() {
     "Darjeeling Tea Gardens", "Sundarbans Mangroves"
   ];
 
-  // Jay's Api key
   const apiKey = "iyAWLiH47sEeinuQWkA20QBM6XBum5UuxvXcyI3H-XA";
 
   useEffect(() => {
@@ -36,8 +36,10 @@ function HeroSection() {
           const url = response.data.results.map((img) => (
             img.urls.regular
           ))
+
           allImages = allImages.concat(url);
         }
+
         setImages(allImages);
 
       } catch (error) {
@@ -45,7 +47,7 @@ function HeroSection() {
       }
     }
     fetchImages();
-  } , []);
+  }, []);
 
   useEffect(() => {
     if (images.length === 0) return;
@@ -58,37 +60,44 @@ function HeroSection() {
     return () => { clearInterval(interval) }
   }, [images])
 
-  const bgImage = images[currIndex] || bgImageAlt;
+  const bgImage = images[currIndex] || "";
+  // use to bypass the eslint error 
+  motion.create(HeroSection);
   return (
-      <section
-        className="hero-section"
-        style={{
-          backgroundImage: `url(${bgImage})`,
-          // transition: `background-image 1s ease-in-out`
-        }}
-      >
-        <div className="overlay"></div>
-        <div className="hero-content">
-          <h1>
-            Discover the World's{" "}
-            <span className="highlight">Hidden Treasures</span>
-          </h1>
-          <p
-            style={{ fontWeight: "bold" }}
-          >
-            Upload photos, recognize monuments instantly, and unlock rich cultural
-            stories. Your personal guide to heritage sites worldwide.
-          </p>
-          <div className="hero-buttons">
-            <button className="btn upload-btn">
-              <i className="hgi hgi-stroke hgi-upload-04"></i>
-              &nbsp;Upload Moments</button>
-            <button className="btn explore-btn">
-              <i className="search-icon hgi hgi-stroke hgi-search-01"></i>
-              &nbsp;Explore Monuments</button>
-          </div>
+    <motion.section
+      className="hero-section"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        // transition: `background-image 1s ease-in-out`
+      }}
+      key = {currIndex}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1.5 }}
+    >
+      <div className="overlay"></div>
+      <div className="hero-content">
+        <h1>
+          Discover the World's{" "}
+          <span className="highlight">Hidden Treasures</span>
+        </h1>
+        <p
+          style={{ fontWeight: "bold" }}
+        >
+          Upload photos, recognize monuments instantly, and unlock rich cultural
+          stories. Your personal guide to heritage sites worldwide.
+        </p>
+        <div className="hero-buttons">
+          <button className="btn upload-btn">
+            <i className="hgi hgi-stroke hgi-upload-04"></i>
+            &nbsp;Upload Moments</button>
+          <button className="btn explore-btn">
+            <i className="search-icon hgi hgi-stroke hgi-search-01"></i>
+            &nbsp;Explore Monuments</button>
         </div>
-      </section>
+      </div>
+    </motion.section>
   );
 }
 
