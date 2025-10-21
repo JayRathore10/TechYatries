@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import "./HeroSection.css";
-// import bgImageAlt from '../assets/images/indiaGate.jpg';
+import bgImageAlt from '../assets/images/indiaGate.jpg';
 function HeroSection() {
 
   const [images, setImages] = useState([]);
@@ -60,7 +60,7 @@ function HeroSection() {
     return () => { clearInterval(interval) }
   }, [images])
 
-  const bgImage = images[currIndex] || "";
+  const bgImage = images[currIndex] || bgImageAlt;
   // use to bypass the eslint error 
   motion.create(HeroSection);
   return (
