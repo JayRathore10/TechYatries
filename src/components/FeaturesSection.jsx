@@ -11,7 +11,7 @@ export function FeaturesSection() {
     hidden: {},
     show: {
       transition: {
-        staggerChildren: 0.3 
+        staggerChildren: 0.3
       }
     }
   };
@@ -26,18 +26,19 @@ export function FeaturesSection() {
       <motion.h2 className="feature-head"
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{duration :1 , ease : "linear"}}
       >
         Everything You Needed to Explore the World
       </motion.h2>
       <br />
-      <motion.div 
+      <motion.div
         className="feature-grid"
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{duration :1 , ease : "linear"}}
       >
         <motion.div className="feature-card" variants={cardVariants}>
           <i className="bi bi-camera feature-icon"></i>

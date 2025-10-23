@@ -9,8 +9,8 @@ export function CardsHeading(){
       <motion.h1
         initial={{opacity:0 , x : -100}}
         whileInView={{opacity:1 , x : 0}}
-        viewport={{once: true , amount:0.5}}
-        transition={{duration:1}}
+        viewport={{once: true , amount:0.25}}
+        transition={{duration :1 , ease : "linear"}}
         className='next-trip-heading'
       >Book Your Next Trip Now!</motion.h1>
     </>

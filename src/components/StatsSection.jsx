@@ -77,14 +77,16 @@ function StatsSection() {
       <motion.h2
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: 1 , ease:"linear"}}
       >Our Achievements</motion.h2>
       <motion.div className="stats-grid" 
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{once : true, amount:0.5}}
+        viewport={{once : true, amount:0.25}}
+        transition={{duration :1 , ease : "linear"}}
+
       >
         <motion.div className="stat-card" variants={cardVariants}>
           <h3>{count.project}+</h3>
