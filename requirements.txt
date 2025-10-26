@@ -1,0 +1,24 @@
+# TechYatries Frontend Requirements (React + Vite)
+
+# Core
+react==18.2.0
+react-dom==18.2.0
+vite==5.0.0
+
+# HTTP Requests
+axios==1.6.0
+
+# Routing
+react-router-dom==6.22.0
+
+# Styling
+tailwindcss==3.3.3
+postcss==8.4.28
+autoprefixer==10.4.16
+
+# Icons / UI (optional)
+lucide-react==0.344.0
+
+# Development Tools
+eslint==8.56.0
+@vitejs/plugin-react==4.2.0
